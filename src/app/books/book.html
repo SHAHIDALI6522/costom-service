@@ -1,0 +1,47 @@
+<div class="bg-info py-5 align-items-center">
+  <!-- Functions -->
+  <div class="d-flex bg-warning">
+    <h1 class="ml-5 text-dark font-italic">BOOKS</h1>
+  </div>
+  <div class="mt-4">
+    <div class="w-25 d-flex">
+      <input
+        class="form-control rounded-pill ml-5"
+        type="text"
+        placeholder="search"
+        [(ngModel)]="searchText"
+      />
+    </div>
+    <div class="d-flex justify-content-between px-3 mt-4 align-items-center">
+      <div *ngFor="let book of books | search:searchText " class="px-3">
+        <mat-card class="example-card rounded-lg">
+          <mat-card-header>
+            <div mat-card-avatar class="example-header-image">
+              <img
+                style="width: 50px; height: 50px; border-radius: 25px"
+                src="{{book.headimageUrl}}"
+                alt=""
+              />
+            </div>
+            <mat-card-title>{{book.title}}</mat-card-title>
+            <mat-card-subtitle>Enginer</mat-card-subtitle>
+          </mat-card-header>
+          <img
+            mat-card-image
+            src="{{book.imageUrl}}"
+            alt="Photo of a Shiba Inu"
+          />
+          <mat-card-content>
+            <h3 class="text-muted">{{book.author}}</h3>
+            <p>Book Page: <strong>{{book.totalpages}}</strong></p>
+            <p>{{book.price.value +' '+ book.price.currency }}</p>
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-button>more detail</button>
+            <button mat-button>Thanks for choiceing</button>
+          </mat-card-actions>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</div>

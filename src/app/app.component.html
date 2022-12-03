@@ -1,0 +1,78 @@
+<nav
+  class="navbar navbar-expand-sm navbar-light"
+  style="background-color: #e3f2fd"
+>
+  <a
+    class="navbar-brand pointer"
+    routerLinkActive="hover:text-sky-700 hover:bg-orange-600 rounded-lg text-white bg-secondary  px-4"
+    >Navbar</a
+  >
+  <button
+    (click)="iscollapsed = !iscollapsed"
+    [attr.aria-expanded]="!iscollapsed"
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarNavDropdown"
+    aria-controls="navbarNavDropdown"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div
+    class="collapse navbar-collapse"
+    [ngbCollapse]="iscollapsed"
+    id="navbarNavDropdown"
+  >
+    <div class="container">
+      <div class="row col-sm-align-items-center">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a
+              class="nav-link"
+              routerLink="Variables"
+              routerLinkActive="hover:text-sky-700 hover:bg-orange-600 rounded-lg text-white bg-secondary  px-4"
+              >Variables <span class="sr-only">(current)</span></a
+            >
+          </li>
+          <li class="nav-item active">
+            <a
+              class="nav-link"
+              routerLink="home"
+              routerLinkActive="hover:text-sky-700 hover:bg-orange-600 rounded-lg text-white bg-secondary  px-4"
+              >Home
+            </a>
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              routerLink="about"
+              routerLinkActive="hover:text-sky-700 hover:bg-orange-600 rounded-lg text-white bg-secondary  px-4"
+              >About</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              routerLink="next-functions"
+              routerLinkActive="hover:text-sky-700 hover:bg-orange-600 rounded-lg text-white bg-secondary  px-4"
+              >BooK Shop</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              routerLink="Store"
+              routerLinkActive="hover:text-sky-700 hover:bg-orange-600 rounded-lg text-white bg-secondary  px-4"
+              >Store Product</a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<router-outlet></router-outlet>

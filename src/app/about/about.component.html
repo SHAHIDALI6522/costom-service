@@ -1,0 +1,54 @@
+<div class="bg-info py-5">
+  <!-- Functions -->
+  <div class="d-flex bg-warning">
+    <h1 class="ml-5 font-italic">About Us</h1>
+  </div>
+  <div class="d-flex px-5 justify-content-between mt-5">
+    <!-- Order -->
+    <div>
+      <h1>Order</h1>
+      <h1 class="d-flex justify-content-center" *ngFor="let i of order">
+        {{ i }}
+      </h1>
+    </div>
+    <!-- Un Order -->
+    <div>
+      <h1>Un Order</h1>
+      <h1 class="d-flex justify-content-center" *ngFor="let i of unorder">
+        {{ i }}
+      </h1>
+    </div>
+    <!--Odd Number  -->
+    <div>
+      <h1>Odd Nu</h1>
+      <h1 class="d-flex justify-content-center" *ngFor="let i of evennumber">
+        {{ i }}
+      </h1>
+    </div>
+    <!--  Even Number -->
+    <div>
+      <h1>Even Nu</h1>
+      <h1 class="d-flex justify-content-center" *ngFor="let i of oddnumbar">
+        {{ i }}
+      </h1>
+    </div>
+    <!-- Tabel Data Whitout userInput -->
+    <div>
+      <h1>Tabel</h1>
+      <h1 *ngFor="let i of tabeldata">{{ i }}</h1>
+    </div>
+    <!-- tabel Data white userInput -->
+    <div>
+      <h1>User Tabel</h1>
+      <div class="d-flex justify-content-center">
+        <input #user type="number" placeholder="please Enter Number" />
+        <button type="button" (click)="userdata(user)" class="btn btn-success">
+          Get Tabel Data
+        </button>
+      </div>
+      <h1 class="d-flex justify-content-center" *ngFor="let i of usertabel">
+        {{ i }}
+      </h1>
+    </div>
+  </div>
+</div>

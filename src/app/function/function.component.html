@@ -1,0 +1,72 @@
+<div class="bg-danger bg-hight p-0">
+  <!-- Header -->
+  <div
+    class="d-flex justify-content-between align-items-center h-16 pr-3 sm:pr-5 pl-6 sm:pl-8 bg-primary text-light"
+  >
+    <div class="text-lg">Functions Page</div>
+    <button (click)="close()" mat-icon-button>
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+
+  <!-- Mian -->
+  <div class="py-5">
+    <!-- Functions -->
+    <div class="d-flex alert-dark">
+      <h1 class="ml-5 text-info font-italic">Functions</h1>
+    </div>
+    <div
+      class="text-center mt-3 justify-content-around align-items-center d-flex"
+    >
+      <h1>{{ s }}</h1>
+      <h1 *ngIf="show; else awa">shahid ali</h1>
+      <button (click)="change()">click me</button>
+      <ng-template #awa>
+        <h1>Awais saeed</h1>
+      </ng-template>
+      <div>
+        <div class="px-2">
+          <input
+            type="number"
+            [(ngModel)]="enternumber"
+            placeholder="Serech  Result"
+          />
+
+          <button
+            type="button"
+            (click)="selectnumber()"
+            class="ml-2 btn btn-success"
+          >
+            Get Result
+          </button>
+        </div>
+        <h1>{{ vot }}</h1>
+      </div>
+      <!-- <h1>{{ shaid <= 5 ? shaid : ali }}</h1> -->
+      <div>
+        <!-- <input [(ngModel)]="user" type="text" /> -->
+      </div>
+    </div>
+    <button (click)="addcounter()" class="btn btn-success">show counter</button>
+    <div
+      *ngIf="showw"
+      class="d-flex px-5 justify-content-between"
+      style="width: 200px"
+    >
+      <i
+        (click)="addNumber('minus', 'minus')"
+        class="fa fa-minus fa-2x"
+        aria-hidden="true"
+      ></i>
+
+      {{ counter }}
+
+      <i
+        (click)="addNumber('add', 'add')"
+        class="fa fa-plus fa-2x"
+        aria-hidden="true"
+        style="color: #1c7ed6"
+      ></i>
+    </div>
+  </div>
+</div>

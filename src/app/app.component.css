@@ -1,0 +1,12 @@
+.pointer {
+    cursor: pointer;
+}
+
+.darop:hover {
+    color: black !important;
+}
+
+.activecolor {
+    background: 94B49F;
+
+}

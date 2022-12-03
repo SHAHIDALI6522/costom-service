@@ -1,0 +1,81 @@
+<div class="bg-info py-5">
+  <!-- Functions -->
+  <div class="d-flex bg-warning">
+    <h1 class="ml-5 font-italic">Shop Products</h1>
+  </div>
+  <div class="d-flex px-5">
+    <div>
+      <div
+        class="d-flex px-5 justify-content-between mt-5"
+        *ngFor="let product of products"
+      >
+        <div class="card" style="width: 18rem">
+          <img src="{{ product.imaUrl }}" class="card-img-top" alt="..." />
+          <div class="card-body">
+            <h5 class="card-title">{{ product.ownname | uppercase }}</h5>
+            <p class="card-text">
+              {{ product.description }}
+            </p>
+            <div class="d-flex justify-content-end">
+              <strong>{{ product.quantity | currency : "USD" }}</strong>
+            </div>
+
+            <a class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="mt-5">
+      <div class="d-flex">
+        <div>
+          <h1
+            class="px-3"
+            *ngFor="let i of arrynumber; index: of | orderBy : 'i'; index as a"
+          >
+            {{ i }}
+          </h1>
+          <div class="px-3">
+            <table class="table table-hover table-dark">
+              <thead>
+                <tr>
+                  <th scope="col">First Name</th>
+                  <th scope="col">Last Name</th>
+                  <th scope="col">Roll Number</th>
+                  <th scope="col">Gender</th>
+                  <th scope="col">Program</th>
+                  <th scope="col">Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let s of studentlist | orderBy : 'stuFName'">
+                  <td>{{ s.stuFName }}</td>
+                  <td>{{ s.stulName }}</td>
+                  <td>{{ s.stuRoll }}</td>
+                  <td>{{ s.stuGender }}</td>
+                  <td>{{ s.stuProgram }}</td>
+                  <td>
+                    <button type="button" class="btn btn-outline-secondary">
+                      Edit
+                    </button>
+                  </td>
+                  <td>
+                    <button
+                      (click)="delet(s.stuFName)"
+                      type="button"
+                      class="btn btn-outline-info"
+                    >
+                      Delete
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <h1 class="px-2 h-25 bg-white">
+          Totel: <span> {{ sumarray }}</span>
+        </h1>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,109 @@
+<div class="bgcolor py-5 bg-hight p-0">
+  <!-- Functions -->
+  <div class="headcolor">
+    <h1 class="text-light py-4 font-italic">Home</h1>
+  </div>
+  <div class="d-flex align-items-center px-5">
+    <div>
+      <div class="px-5">
+        <div class="py-3">
+          <mat-slide-toggle class="text-light" (click)="increase()"
+            >Show Counter!</mat-slide-toggle
+          >
+          <div
+            *ngIf="show"
+            class="d-flex py-4 align-items-center justify-content-between"
+            style="width: 200px"
+          >
+            <i
+              (click)="addcounter('meinus', 'meinus')"
+              class="fa fa-minus fa-2x text-danger"
+              aria-hidden="true"
+            ></i>
+            <h1 class="text-light">{{ counter }}</h1>
+            <i
+              (click)="addcounter('add', 'add')"
+              class="fa fa-plus fa-2x"
+              aria-hidden="true"
+              style="color: #1c7ed6"
+            ></i>
+          </div>
+        </div>
+        <div>
+          <button
+            (click)="opendialog()"
+            class="bg-light rounded-pill"
+            mat-button
+            color="accent"
+          >
+            Go To Functions page
+          </button>
+        </div>
+      </div>
+      <div class="d-flex px-5 py-4">
+        <div style="width: 400px">
+          <div class="mb-3">
+            <label for="exampleForm" class="form-label">Enter Your Text</label>
+            <input #user type="text" class="form-control rounded-pill" />
+            <button
+              type="button"
+              (click)="onclick(user)"
+              class="my-3 btn btn-success"
+            >
+              Create User
+            </button>
+            <div>
+              <table class="table table-hover bg-light">
+                <thead>
+                  <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Product Name</th>
+                    <th scope="col">Delete</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let i of userlist; index as id">
+                    <td>{{ id + 1 }}</td>
+                    <td>{{ i }}</td>
+                    <td>
+                      <button
+                        (click)="onDelete(id)"
+                        type="button"
+                        class="btn btn-warning"
+                      >
+                        Detele
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div style="width: 400px"></div>
+      </div>
+    </div>
+    <div class="container bg-light">
+      <input
+        class="form-control"
+        type="text"
+        placeholder="Search"
+        [(ngModel)]="searchtext"
+      />
+      <table class="table table-hover table-striped">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let i of data | search: searchtext | orderBy: 'name'">
+            <td>{{ i.id }}</td>
+            <td>{{ i.name }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
